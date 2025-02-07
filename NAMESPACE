@@ -1,0 +1,5 @@
+export(CGclustAnn)
+export(methDNAcluster)
+export(betaDiffcluster)
+export(corrCluster)
+export(integrCluster)
