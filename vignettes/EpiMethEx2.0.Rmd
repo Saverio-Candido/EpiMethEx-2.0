@@ -1,0 +1,82 @@
+---
+title: "EpiMethEx2.0"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{EpiMethEx2.0}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+EpiMethEx 2.0 is a R package that perform DNA methylation analysis for the identification of DNA methylation (methDNA) clusters using Infinium HumanMethylation450 data. CG probeset clustering analyses are also performed considering the correlation data between CG methDNA status and  expression level of relative gene, as well as the Beta difference values computed between comparison groups (e.g. tumor vs normal, tumor vs tumor). Integrated analysis  may be executed combining methDNA, correlation, and Beta difference CG clusters. EpiMethEx 2.0 analyses were performed on TCGA datasets (Methylation450k and IlluminaHiSeq) of 33 different tumor types and a pool of normal samples retrieved from each cohort. The methDNA and gene expression test datasets, as well as the annotation data of CG probesets and CG clusters, are available in EpiMethEx 2.0 R package, while the full datasets are reported on Zenodo (https://zenodo.org/uploads/14066730). EpiMethEx 2.0 may be used for customized analyses of other datasets including pathological a physiological conditions. 
+
+
+# Installation
+Download the EpiMethEx 2.0 compressed installation file:
+Compressed installation file of EpiMethEx 2.0 package is available on https://www.epimethex.unict.it/ and  as a supplementary file on publication.
+
+Run the following  command:
+```r
+install.packages("path/to/ EpiMethEx2.0_0.1.0.tar.gz", repos = NULL, type = "source")
+```
+or run the code the installation from GitHub:
+```r
+# Install devtools if not already installed
+if (!requireNamespace("devtools", quietly = TRUE)) {
+  install.packages("devtools")
+}
+# Load devtools
+library(devtools)
+# Install the package from GitHub
+install_github("Saverio-Candido/EpiMethEx-2.0")
+# Load the installed package
+library(EpiMethEx2.0)
+```
+
+# EpiMethEx 2.0 functions
+EpiMethEx 2.0 package include the following functions to perform clustering analyses: 
+
+**CGclustAnn**: Clustering of CG probesets based on Genomic Position, RefGene Name, or RefGene Annotation  
+
+**methDNAcluster**: Clustering of CG probesets according to methDNA median levels  
+
+**corrCluster**: Clustering of CG probesets according to correlation median levels  
+
+**betaDiffcluster**: Clustering of CG probesets according to Beta difference median levels  
+
+**integrCluster**: Integration of methDNA, Corr, and betaDiff CG clusters  
+
+A detailed description of each function is provided in the Help Pages section  
+
+
+# Test datasets 
+The EpiMethEx2.0 functions may be tested in Help Pages section using the required test datasets:  
+
+**cgAnnotation**  
+
+**CGclusterAnn_Pos**  
+
+**CGclusterAnn_Name**  
+
+**CGclusterAnn_Accession**  
+
+**methDNAmatrix**  
+
+**corrMatrix**  
+
+**diffExprMatrix**  
+
+**betaDiffmatrix**  
+
+**methDNAclusters**  
+
+**corrClusters**  
+
+**betaDiffclusters**  
+
+Each test dataset includes only the data relative to chr1 as an example.   
+
+```r
+# Use this code to visualize the test datasets (replace "TestDataset" with the selected test dataset)
+head(TestDataset)
+```
