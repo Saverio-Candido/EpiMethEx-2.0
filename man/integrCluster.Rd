@@ -47,9 +47,9 @@ The resulting data frame is composed of RefGene_Accession CG cluster Annotation 
   \item \code{cluster.median.methDNA}: median methDNA levels of each integrated CG cluster.
   \item \code{cluster.median.corr}: median corr levels of each integrated CG cluster.
   \item \code{cluster.median.betaDiff}: median betaDiff levels of each integrated CG cluster.
-  \item \code{mean.expr.tumor}: mean expression levels of gene relative to integrated CG cluster computed for each tumor.
-  \item \code{logFC_Tumor.vs.Norm}: LogFC of gene expression differential analysis between each tumor type and normalPool.
-  \item \code{pValue_Tumor.vs.Norm}: p value of gene expression differential analysis between each tumor type and normalPool.
+  \item \code{mean.expr.Ref}: mean expression levels of gene relative to integrated CG cluster computed for reference group.
+  \item \code{logFC_Ref.vs.CTRL}: LogFC of gene expression differential analysis between reference group and control group.
+  \item \code{pValue_LogFC.expr}: p value of gene expression differential analysis between reference group and control group.
 }
 }
 \examples{
