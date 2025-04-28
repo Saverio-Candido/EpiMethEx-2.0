@@ -70,9 +70,9 @@ integrCluster <- function(methDNAmatrix, betaDiffmatrix, corrMatrix, diffExprMat
     mutate(cluster.median.methDNA = median(CG.median.methDNA), cluster.median.corr = median(CG.median.corr), cluster.median.betaDiff = median(CG.median.betaDiff))
 
   diffExprMatrix <- diffExprMatrix[ , c(1, 2, 4, 5)]
-  colnames(diffExprMatrix)[colnames(diffExprMatrix) == "MeanTumor"] <- "mean.expr.tumor"
-  colnames(diffExprMatrix)[colnames(diffExprMatrix) == "logFC"] <- "logFC.expr.tumor.vs.normal"
-  colnames(diffExprMatrix)[colnames(diffExprMatrix) == "pValue"] <- "pValue.logFC.expr"
+  colnames(diffExprMatrix)[2] <- "mean.expr.Ref"
+  colnames(diffExprMatrix)[3] <- "logFC.expr.Ref.vs.CTRL"
+  colnames(diffExprMatrix)[4] <- "pValue.logFC.expr"
 
   resultdef2 <- merge(result, diffExprMatrix, by = "UCSC_RefGene_Name", all.x = TRUE)
   resultdef <- merge(CGclusterAnn, resultdef2[ ,c(2, 16, 23:34)], by =c("clusterName", "ID"), all.x = TRUE)
